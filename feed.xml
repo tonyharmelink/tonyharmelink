@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="https://mydomain.com/feed.xml" rel="self" type="application/atom+xml" /><link href="https://mydomain.com/" rel="alternate" type="text/html" /><updated>2019-03-27T21:26:24+00:00</updated><id>https://mydomain.com/feed.xml</id><title type="html">My website</title><subtitle>This is my new website</subtitle><entry><title type="html">Coming Soon</title><link href="https://mydomain.com/general/2018/08/22/hello-world/" rel="alternate" type="text/html" title="Coming Soon" /><published>2018-08-22T00:00:00+00:00</published><updated>2018-08-22T00:00:00+00:00</updated><id>https://mydomain.com/general/2018/08/22/hello-world</id><content type="html" xml:base="https://mydomain.com/general/2018/08/22/hello-world/">&lt;p&gt;VMware stuff.&lt;/p&gt;
+
+&lt;p&gt;EUC Automation.&lt;/p&gt;
+
+&lt;p&gt;Powershell.&lt;/p&gt;</content><author><name></name></author><summary type="html">VMware stuff.</summary></entry></feed>
