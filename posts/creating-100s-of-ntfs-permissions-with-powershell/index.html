@@ -51,9 +51,9 @@
           <a class="tag" href="https://tonyh.dev/tags/powershell/">Powershell</a></div></div>
     </header>
     <div class="post-content">
-      <p>Starting at my new employer one of the first major projects to hit implementation phase is a migration of the company file server.  The major wrinkle is that the old file server is on Novell, with 25+ years of permission and folder buildup.</p>
+      <p>Starting at my new employer one of the first major projects to hit implementation phase is a migration of the company file server.  The major wrinkle is that the old file server is on Novell, with 25+ years of permission and folder buildup. Millions of files, hundreds of thousands of folders.</p>
 
-<p>The normal Windows to Windows robocopy won&rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp; Users to AD OUs, Groups, &amp; Users and subsequently applied to the newly copied files on a Windows file server.</p>
+<p>The normal Windows to Windows robocopy won&rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp; Users to AD OUs, Groups, &amp; Users and subsequently applied to the newly copied files and folders on a Windows file server.</p>
 
 <p>If the permissions were simple this would be no issue, but with so many years of inertia it is a bit of a mess with around 600 different points where permissions are applied, inheritance broken, or traversal needing to be mapped to match 1 to 1. No way I am doing that by hand.</p>
 
@@ -61,14 +61,14 @@
 
 <p>Here&rsquo;s a small snip of the start of my script. Available <a href="https://github.com/tonyharmelink/powershell-scripts/tree/master/MigrateFileServer" title="https://github.com/tonyharmelink/powershell-scripts/tree/master/MigrateFileServer">here</a>.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">            <span style="color:#75715e"># Parse the lines from our CSV, expected columns are:</span>
-            <span style="color:#75715e"># Folder path, full path with drive D:\[bla]</span>
-            <span style="color:#75715e"># newFull to designate a principal to recieve a Full Access permission</span>
-            <span style="color:#75715e"># newRW to designate a principal to recieve a Read and Write permission</span>
-            <span style="color:#75715e"># newRO to designate a principal to recieve a Read Only permission</span>
-            <span style="color:#75715e"># folderTraverse to designate a principal to recieve a Folder Traversal permission</span>
-            <span style="color:#75715e"># noAccess to break inheretance, make permissions, and remove the noAccess principal</span>
-    
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">\<span style="color:#75715e"># Parse the lines from our CSV, expected columns are:</span>
+\<span style="color:#75715e"># Folder path, full path with drive D:\[bla\]</span>
+\<span style="color:#75715e"># newFull to designate a principal to recieve a Full Access permission</span>
+\<span style="color:#75715e"># newRW to designate a principal to recieve a Read and Write permission</span>
+\<span style="color:#75715e"># newRO to designate a principal to recieve a Read Only permission</span>
+\<span style="color:#75715e"># folderTraverse to designate a principal to recieve a Folder Traversal permission</span>
+\<span style="color:#75715e"># noAccess to break inheretance, make permissions, and remove the noAccess principal</span>
+
             Import-Csv <span style="color:#e6db74">&#34;.\home.csv&#34;</span> | <span style="color:#66d9ef">ForEach</span>-Object {
     
                 <span style="color:#75715e"># If there is a principal to apply a Full Access permission to</span>
@@ -91,6 +91,10 @@
                         )
                     }
                 }</code></pre></div>
+
+<p>The execution went well. All of the files were pre-copied with robocopy onto the new server. The days leading up to and the night of the cutover we used Beyond Compare to sync any delta changes.</p>
+
+<p>Huge success!</p>
 
     </div>
   </article>

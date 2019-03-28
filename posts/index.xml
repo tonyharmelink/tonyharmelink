@@ -17,8 +17,8 @@
       <pubDate>Thu, 28 Mar 2019 20:36:26 +0000</pubDate>
       
       <guid>https://tonyh.dev/posts/creating-100s-of-ntfs-permissions-with-powershell/</guid>
-      <description>Starting at my new employer one of the first major projects to hit implementation phase is a migration of the company file server. The major wrinkle is that the old file server is on Novell, with 25+ years of permission and folder buildup.
-The normal Windows to Windows robocopy won&amp;rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp;amp; Users to AD OUs, Groups, &amp;amp; Users and subsequently applied to the newly copied files on a Windows file server.</description>
+      <description>Starting at my new employer one of the first major projects to hit implementation phase is a migration of the company file server. The major wrinkle is that the old file server is on Novell, with 25+ years of permission and folder buildup. Millions of files, hundreds of thousands of folders.
+The normal Windows to Windows robocopy won&amp;rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp;amp; Users to AD OUs, Groups, &amp;amp; Users and subsequently applied to the newly copied files and folders on a Windows file server.</description>
     </item>
     
   </channel>
