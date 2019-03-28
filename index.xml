@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>@TonyHarmelink blogging!</title>
-    <link>http://tonyh.dev/</link>
+    <link>https://tonyh.dev/</link>
     <description>Recent content on @TonyHarmelink blogging!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Mar 2019 18:40:11 +0000</lastBuildDate>
     
-	<atom:link href="http://tonyh.dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://tonyh.dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>My First Post</title>
-      <link>http://tonyh.dev/posts/my-first-post/</link>
+      <link>https://tonyh.dev/posts/my-first-post/</link>
       <pubDate>Thu, 28 Mar 2019 18:40:11 +0000</pubDate>
       
-      <guid>http://tonyh.dev/posts/my-first-post/</guid>
-      <description>Soon to be home of content.</description>
+      <guid>https://tonyh.dev/posts/my-first-post/</guid>
+      <description>Soon to be the home of content.</description>
     </item>
     
   </channel>
