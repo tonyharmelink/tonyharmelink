@@ -6,10 +6,20 @@
     <description>Recent content in Posts on @TonyHarmelink blogging!</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Mar 2019 18:40:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Mar 2019 20:36:26 +0000</lastBuildDate>
     
 	<atom:link href="https://tonyh.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Creating 100s of NTFS permissions with Powershell</title>
+      <link>https://tonyh.dev/posts/creating-100s-of-ntfs-permissions-with-powershell/</link>
+      <pubDate>Thu, 28 Mar 2019 20:36:26 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/creating-100s-of-ntfs-permissions-with-powershell/</guid>
+      <description>Starting at my new employer one of the first major projects to hit implementation phase is a migration of the company file server. The major wrinkle is that the old file server is on Novell, with 25+ years of permission and folder buildup.
+The normal Windows to Windows robocopy won&amp;rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp;amp; Users to AD OUs, Groups, &amp;amp; Users and subsequently applied to the newly copied files on a Windows file server.</description>
+    </item>
     
     <item>
       <title>My First Post</title>
