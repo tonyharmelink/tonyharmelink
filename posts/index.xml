@@ -21,14 +21,5 @@
 The normal Windows to Windows robocopy won&amp;rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp;amp; Users to AD OUs, Groups, &amp;amp; Users and subsequently applied to the newly copied files on a Windows file server.</description>
     </item>
     
-    <item>
-      <title>My First Post</title>
-      <link>https://tonyh.dev/posts/my-first-post/</link>
-      <pubDate>Thu, 28 Mar 2019 18:40:11 +0000</pubDate>
-      
-      <guid>https://tonyh.dev/posts/my-first-post/</guid>
-      <description>Soon to be the home of content.</description>
-    </item>
-    
   </channel>
 </rss>
