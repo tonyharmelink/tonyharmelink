@@ -61,13 +61,13 @@
 
 <p>Here&rsquo;s a small snip of the start of my script. Available <a href="https://github.com/tonyharmelink/powershell-scripts/tree/master/MigrateFileServer" title="https://github.com/tonyharmelink/powershell-scripts/tree/master/MigrateFileServer">here</a>.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1"><span style="color:#75715e"># Parse the lines from our CSV, expected columns are:</span>
-<span style="color:#75715e"># Folder path, full path with drive D:\[bla\]</span>
-<span style="color:#75715e"># newFull to designate a principal to recieve a Full Access permission</span>
-<span style="color:#75715e"># newRW to designate a principal to recieve a Read and Write permission</span>
-<span style="color:#75715e"># newRO to designate a principal to recieve a Read Only permission</span>
-<span style="color:#75715e"># folderTraverse to designate a principal to recieve a Folder Traversal permission</span>
-<span style="color:#75715e"># noAccess to break inheretance, make permissions, and remove the noAccess principal</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ps1" data-lang="ps1">    <span style="color:#75715e"># Parse the lines from our CSV, expected columns are:</span>
+    <span style="color:#75715e"># Folder path, full path with drive D:\[bla\]</span>
+    <span style="color:#75715e"># newFull to designate a principal to recieve a Full Access permission</span>
+    <span style="color:#75715e"># newRW to designate a principal to recieve a Read and Write permission</span>
+    <span style="color:#75715e"># newRO to designate a principal to recieve a Read Only permission</span>
+    <span style="color:#75715e"># folderTraverse to designate a principal to recieve a Folder Traversal permission</span>
+    <span style="color:#75715e"># noAccess to break inheretance, make permissions, and remove the noAccess principal</span>
 
             Import-Csv <span style="color:#e6db74">&#34;.\home.csv&#34;</span> | <span style="color:#66d9ef">ForEach</span>-Object {
     
