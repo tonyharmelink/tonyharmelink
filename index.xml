@@ -21,5 +21,15 @@
 The normal Windows to Windows robocopy won&amp;rsquo;t work to preserve permissions, all permissions must be mapped from Novell OUs, Groups, &amp;amp; Users to AD OUs, Groups, &amp;amp; Users and subsequently applied to the newly copied files and folders on a Windows file server.</description>
     </item>
     
+    <item>
+      <title>The creation of this blog with Hugo, GitHub Pages, Forestry, and Google Domains</title>
+      <link>https://tonyh.dev/posts/the-creation-of-this-blog-with-hugo-github-pages-forestry-and-google-domains-1/</link>
+      <pubDate>Wed, 27 Mar 2019 13:57:19 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/the-creation-of-this-blog-with-hugo-github-pages-forestry-and-google-domains-1/</guid>
+      <description>A coworker asked how I setup this blog so for their and others edification I&amp;rsquo;ll put the steps into writing.
+I decided I wanted a super simple blog that would render out to static pages so I could leverage GitHub pages for my hosting, leaving my only expense the domain name. So far I have settled on the stack of Google Domains for my domain, GitHub Pages for my hosting, Hugo for my website framework, and am currently toying with Forestry for content management and creation.</description>
+    </item>
+    
   </channel>
 </rss>
