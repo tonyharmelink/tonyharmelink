@@ -25,6 +25,16 @@ Get-AppxPackage | Select Name, PackageFamilyName  Determine the packages you wis
     </item>
     
     <item>
+      <title>VMworld 2019 - My first VMworld</title>
+      <link>https://tonyh.dev/posts/vmworld-2019-my-first-vmworld/</link>
+      <pubDate>Sat, 31 Aug 2019 21:00:00 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/vmworld-2019-my-first-vmworld/</guid>
+      <description>My first VMworld. It was an awesome time. I highly recommend everyone with an investment or interest in VMware&amp;rsquo;s products to go. I learned so much about how to better use the products I have.
+Arriving on Sunday early in the morning made life substantially easier. The registration lines were almost nonexistent, and I was able to get settled in before the Veeam reception at the solutions exchange filled me with beer and a bag full of swag in exchange for hearing about dozens of products.</description>
+    </item>
+    
+    <item>
       <title>Creating 100s of NTFS permissions with Powershell and DSC</title>
       <link>https://tonyh.dev/posts/creating-100s-of-ntfs-permissions-with-powershell/</link>
       <pubDate>Thu, 28 Mar 2019 20:36:26 +0000</pubDate>
