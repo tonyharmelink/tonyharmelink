@@ -20,7 +20,7 @@
       <guid>https://tonyh.dev/posts/extract-vmware-horizon-client-msi-in-5-1/</guid>
       <description>I was working on extracting the MSI for the Horizon Client and noticed that the /x and /extract flags on the VMware Horizon client documentation weren&amp;rsquo;t working for me.
 Luckily I did notice a few lines in the log of the installer in my %temp% directory
-[6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleAction = 5 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleElevated = 1 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleInstalled = 1  It&amp;rsquo;s a Wix Bundle installer. These I know how to deal with after exploding and customizing the Bentley ProjectWise installer.</description>
+[6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleAction = 5 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleElevated = 1 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleInstalled = 1  It&amp;rsquo;s a Wix Bundle installer. These I know how to deal with after exploding and customizing other installers.</description>
     </item>
     
     <item>
