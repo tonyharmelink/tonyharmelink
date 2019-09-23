@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 01 Sep 2019 07:24:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Sep 2019 21:31:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tonyh.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Extract VMware Horizon Client MSI in 5.1</title>
+      <link>https://tonyh.dev/posts/extract-vmware-horizon-client-msi-in-5-1/</link>
+      <pubDate>Mon, 23 Sep 2019 21:31:00 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/extract-vmware-horizon-client-msi-in-5-1/</guid>
+      <description>I was working on extracting the MSI for the Horizon Client and noticed that the /x and /extract flags on the VMware Horizon client documentation weren&amp;rsquo;t working for me.
+Luckily I did notice a few lines in the log of the installer in my %temp% directory
+[6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleAction = 5 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleElevated = 1 [6D2C:6D30][2019-09-23T16:11:42]i410: Variable: WixBundleInstalled = 1  It&amp;rsquo;s a Wix Bundle installer. These I know how to deal with after exploding and customizing the Bentley ProjectWise installer.</description>
+    </item>
     
     <item>
       <title>Workspace ONE: Remove APPX packages from Windows 10 with a custom CSP</title>
