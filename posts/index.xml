@@ -19,7 +19,7 @@
       
       <guid>https://tonyh.dev/posts/easy-maintenance-mode-vmotion-migration-of-vgpu-backed-vms/</guid>
       <description>I ran into this issue earlier and didn&amp;rsquo;t find it well documented.
-When putting a vGPU host into maintenance mode the VMs with vGPUs configured don&amp;rsquo;t automatically migrate off of the host.
+When you put a vGPU host into maintenance mode, the vGPU VMs don&amp;rsquo;t automatically migrate off of the host. Annoying.
 It turns out that vMotion uses DRS to evacuate hosts and DRS doesn&amp;rsquo;t automatically act on recommendations for vGPU backed VMs. But we can manually act on the recommendations. Push the apply button in DRS and away it goes.</description>
     </item>
     
