@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 23 Sep 2019 21:31:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 23 Oct 2019 18:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tonyh.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Easy maintenance mode vMotion migration of vGPU backed VMs</title>
+      <link>https://tonyh.dev/posts/easy-maintenance-mode-vmotion-migration-of-vgpu-backed-vms/</link>
+      <pubDate>Wed, 23 Oct 2019 18:00:00 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/easy-maintenance-mode-vmotion-migration-of-vgpu-backed-vms/</guid>
+      <description>I ran into this issue earlier and didn&amp;rsquo;t find it well documented.
+When putting a vGPU host into maintenance mode the VMs with vGPUs configured don&amp;rsquo;t automatically migrate off of the host.
+It turns out that vMotion uses DRS to evacuate hosts and DRS doesn&amp;rsquo;t automatically act on recommendations for vGPU backed VMs. But we can manually act on the recommendations. Push the apply button in DRS and away it goes.</description>
+    </item>
     
     <item>
       <title>Extract VMware Horizon Client MSI in 5.1</title>
