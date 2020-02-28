@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+  <head>
+    <title> Four Node Bare Metal Kubernetes Raspberry Pi Cluster for about $450 // @TonyHarmelink blogging!</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Hugo 0.54.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="Tony Harmelink" />
+    <meta name="description" content="" />
+    <base href="https://tonyh.dev/" />
+    <link rel="stylesheet" href="https://tonyh.dev/css/main.min.ed2bee65dbc2f611ff1a2ca5cfa6d7ec362a8e79fea5cf61bb5213445359e232.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <a href="/"><img class="app-header-avatar" src="./avatar.jpg" /></a>
+      <h1>@TonyHarmelink blogging!</h1>
+      <p>I&#39;m Tony Harmelink. I work primarily on SysAdmin, DevOps, VMware, and EUC projects</p>
+      <div class="app-header-social">
+        
+          <a target="_blank" href="https://github.com/tonyharmelink"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-github">
+  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+</svg></a>
+        
+          <a target="_blank" href="https://twitter.com/tonyharmelink"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-twitter">
+  <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+</svg></a>
+        
+      </div>
+    </header>
+    <main class="app-container">
+      
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title"> Four Node Bare Metal Kubernetes Raspberry Pi Cluster for about $450</h1>
+      <div class="post-meta">
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-calendar">
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line>
+</svg>
+          Feb 28, 2020
+        </div>
+        <div>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-clock">
+  <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
+</svg>
+          6 min read
+        </div></div>
+    </header>
+    <div class="post-content">
+      <p><img src="/uploads/raspberry-pi-dramble-hero-2019-1.jpg" alt="Clean shot stolen from Pi Dramble" title="Clean shot stolen from Pi Dramble" /></p>
+
+<p>I have been thinking of making a homelab for years, but living in a 700 sqft condo I don&rsquo;t have the room for the basement rack of my dreams. A few months ago with the launch of the Raspberry Pi Model 4 B with 4GB of ram I started looking into building a cluster of them for tooling around at home. I found the <a href="https://www.pidramble.com/" title="Pi Dramble">Pi Dramble</a> which give me the push to build it out for testing Kubernetes and eventually <a href="https://www.virtuallyghetto.com/2018/11/esxi-on-a-raspberry-pi.html" title="ESXi on ARM">ESXi on ARM</a>. The PoE HAT makes it cost a bit more, but makes it look nice and clean with one power plug needed.</p>
+
+<p><strong>Parts</strong></p>
+
+<p>4x <a href="https://www.pishop.us/product/raspberry-pi-4-model-b-4gb/" title="Raspberry Pi 4 Model B/4GB">Raspberry Pi 4 Model B/4GB</a> - $55x4 = $220<br />
+4x <a href="https://www.pishop.us/product/raspberry-pi-poe-hat/" title="Raspberry Pi PoE HAT">Raspberry Pi PoE HAT</a> - $21x4 = $84<br />
+4x <a href="https://www.amazon.com/gp/product/B00WR4IJBE/" title="Samsung 32GB EVO Plus Class 10 Micro SDHC">Samsung 32GB EVO Plus Class 10 Micro SDHC</a> - $13x4 = $52<br />
+1x <a href="https://www.amazon.com/gp/product/B07VPP642H/" title="Raspberry Pi 4 Heatsink Pack">Raspberry Pi 4 Heatsink Pack</a> - $8<br />
+1x <a href="https://www.amazon.com/gp/product/B01MRO4M73/" title="NETGEAR 5-Port Gigabit Ethernet Unmanaged PoE Switch">NETGEAR 5-Port Gigabit Ethernet PoE Switch</a> - $45<br />
+1x <a href="https://www.amazon.com/gp/product/B07K72STFB/" title="Acrylic Dog Bone Stack Clear Case">Acrylic Dog Bone Stacking Case</a> - $19<br />
+1x <a href="https://www.amazon.com/gp/product/B01MR94NJY/" title="10 Pack of 6&quot; Cat6">10 Pack of 6&rdquo; Cat6</a> - $14
+~$10 Shipping<br />
+Total Price as of 2020-02-27: $442</p>
+
+<p><strong>Building</strong></p>
+
+<p>Open all the presents up, affix the heatsinks to the Pi, screw spacers onto the Pi with the PoE HAT, peel the paper backing off the acrylic case, and build the stack. Easy as PI 😂</p>
+
+<p><strong>Flashing SD Cards</strong></p>
+
+<p>For the OS on I went with <a href="https://www.raspberrypi.org/downloads/raspbian/" title="Raspbian Buster Lite">Raspbian Buster Lite</a>, no need for a GUI when I&rsquo;m driving everything from my other computers and it means more headroom for workloads.<br />
+<a href="https://www.balena.io/etcher/" title="Balena Etcher">Balena Etcher</a> is awesome for flashing SD cards with an image from ZIP or ISO, highly recommended. It takes about 3 min per card with the super speed cards above.<br />
+Be sure to enable SSH on the images by creating an empty file in the boot directory, on Windows by making a empty text file in the boot directory and naming it ssh with no extension or from a Linux variant by:</p>
+
+<pre><code>$ touch /Volumes/boot/ssh
+</code></pre>
+
+<p>Grab your favorite homelabing drink and repeat for the rest of the SD cards.</p>
+
+<p><strong>Configuring OS</strong></p>
+
+<p>Slot in the SD cards, attach network cables, and power up the switch. After a minute or so the Pis should be powered up. Find the IPs however you like, looking on your router, nmap, or your IP scanner of choice. Once you find them you should be able to SSH into the Raspberry Pis as follows:</p>
+
+<pre><code>$ ssh pi@[IP Address]
+</code></pre>
+
+<p>Default password for Raspbian is: <em>raspberry</em></p>
+
+<p>Once connected to a Pi run the below to start initial configuration:</p>
+
+<pre><code>$ sudo nano -w /etc/dhcpcd.conf
+</code></pre>
+
+<p>Find the <em>interface eth0</em> area and edit in your static IP config for me on my raspberrypi-1 node that is:</p>
+
+<pre><code>static ip_address=10.10.10.51/24
+static routers=10.10.10.254
+static domain_name_servers=10.10.10.254
+</code></pre>
+
+<p>Next, run the Raspberry Pi setup tool. Change the login password from 1, Set your hostname from 2, localization from 4, and overclock if you are feeling like it.</p>
+
+<pre><code>$ sudo raspi-config
+</code></pre>
+
+<p><img src="/uploads/raspi-config-1.png" alt="" /></p>
+
+<p>Once you select Finish the Pi will reboot and have your config ready to go.</p>
+
+<p><strong>Installing the prerequisites</strong></p>
+
+<p>From this point there is some replicated setup to do on all of the nodes. The easiest way is to do this is use something like <a href="https://terminator-gtk2.readthedocs.io/en/latest/grouping.html" title="Broadcast all the things!">Terminator to broadcast to a group</a>.</p>
+
+<p><img src="/uploads/Maximum Speed.png" alt="" /></p>
+
+<p>One of the first things you need is to install a <a href="https://kubernetes.io/docs/setup/production-environment/container-runtimes/">Container Runtime</a>. I&rsquo;m using Docker.</p>
+
+<pre><code>$ curl -sSL get.docker.com | sh &amp;&amp; sudo usermod pi -aG docker
+</code></pre>
+
+<p>Then disable swap. Why? See the <a href="https://github.com/kubernetes/kubernetes/issues/53533">Github Issue</a></p>
+
+<pre><code>$ sudo dphys-swapfile swapoff &amp;&amp; sudo dphys-swapfile uninstall &amp;&amp; sudo update-rc.d dphys-swapfile remove
+</code></pre>
+
+<p>Next, add cgroup settings to the boot line, this allows resource limiting and allocation.</p>
+
+<pre><code>$ sudo cp /boot/cmdline.txt /boot/cmdline_backup.txt
+$ orig=&quot;$(head -n1 /boot/cmdline.txt) cgroup_enable=cpuset cgroup_enable=memory&quot;
+$ echo $orig | sudo tee /boot/cmdline.txt
+</code></pre>
+
+<p>And finally for this part, add the Kubernetes repo, update, and install kubeadm which will pull all the packages.</p>
+
+<pre><code>$ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
+$ echo &quot;deb http://apt.kubernetes.io/ kubernetes-xenial main&quot; | sudo tee /etc/apt/sources.list.d/kubernetes.list
+$ sudo apt-get update -q &amp;&amp; sudo apt-get install -qy kubeadm
+</code></pre>
+
+<p>After this, reboot and we&rsquo;ll start initializing Kubernetes.</p>
+
+<pre><code>$ sudo reboot
+</code></pre>
+
+<p><strong>Initialize the Kubernetes master</strong></p>
+
+<p>It&rsquo;s time to setup Kubernetes. First on the list is to spin up the cluster with <em>kubeadm</em>. Because this is a testing cluster and I like to chaos monkey pull cables to see failover states quickly I&rsquo;m going to make a fast failover config for the bringup.</p>
+
+<pre><code>$ nano kubeadm_conf.yaml
+</code></pre>
+
+<p>And copy the following config into the file. This will set the pod-eviction-timeout to 10s instead of 5min and node-monitor-grace-period to 10s instead of 40s.</p>
+
+<pre><code>apiVersion: kubeadm.k8s.io/v1beta2
+kind: MasterConfiguration
+controllerManagerExtraArgs:
+  pod-eviction-timeout: 10s
+  node-monitor-grace-period: 10s
+</code></pre>
+
+<p>Save and run:</p>
+
+<pre><code>$ sudo kubeadm init --config kubeadm_conf.yaml
+</code></pre>
+
+<p>After a few minutes you&rsquo;ll see something like the following:</p>
+
+<pre><code>...
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run &quot;kubectl apply -f [podnetwork].yaml&quot; with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node as root:
+
+kubeadm join --token TOKEN 10.10.10.51:6443 --discovery-token-ca-cert-hash HASH
+</code></pre>
+
+<p>Follow the instructions to setup your user folders:</p>
+
+<pre><code>$ mkdir -p $HOME/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+</code></pre>
+
+<p>Verify that your node is up and running</p>
+
+<pre><code>$ kubectl get nodes
+NAME             STATUS     ROLES     AGE       VERSION
+raspberrypi-1    NotReady   master    5m        v1.17.3
+</code></pre>
+
+<p>NotReady is fine for now, it won&rsquo;t show as ready until we install a container network.</p>
+
+<p><strong>Setting up the Worker Nodes</strong></p>
+
+<p>Assuming you did the pre-reqs above on the worker nodes, spinning them up is one line taken from when the master was initialized:</p>
+
+<pre><code>$ sudo kubeadm join --token TOKEN 10.10.10.51:6443 --discovery-token-ca-cert-hash HASH
+</code></pre>
+
+<p>Repeat for each node and they are good to go.</p>
+
+<p><strong>Setup your Container Network</strong></p>
+
+<p>A container network is needed for the nodes to communicate with each other. There are a <a href="https://kubernetes.io/docs/concepts/cluster-administration/networking/">bunch of solutions out there</a>, such as NSX-T. <a href="https://www.weave.works/docs/net/latest/kubernetes/kube-addon/">weave-net</a> is the one I&rsquo;ve seen most recommended for easy setups. Run the following on the master node to install it.</p>
+
+<pre><code>$ kubectl apply -f “https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d ‘\n’)
+</code></pre>
+
+<p>With this done, your cluster should be up and running.
+Verify by getting your nodes again:</p>
+
+<pre><code>$ kubectl get nodes
+NAME             STATUS     ROLES     AGE       VERSION
+raspberrypi-1    Ready      master    15m        v1.17.3
+raspberrypi-2    Ready      &lt;none&gt;    13m        v1.17.3
+raspberrypi-3    Ready      &lt;none&gt;    11m        v1.17.3
+raspberrypi-4    Ready      &lt;none&gt;    9m         v1.17.3
+</code></pre>
+
+<p>Now you are ready to go! Find some projects to do on Kubernetes, an autoscaling 3 tier app with a loadbalancer for instance.</p>
+
+<p><strong>Future Plans</strong></p>
+
+<ul>
+<li>Add a USB 3 NVME drive to the master node to provide Persistant Volume storage from a NFS Share</li>
+<li>Setup MetalLB</li>
+<li>Get another set of SD Cards for ESXi on ARM</li>
+<li>Get a NUC, install nested VCF on the NUC, add in Pis as a NFS backed WLD</li>
+</ul>
+
+    </div>
+  </article>
+
+    </main>
+  </body>
+</html>

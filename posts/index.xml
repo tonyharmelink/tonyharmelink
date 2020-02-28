@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 23 Oct 2019 18:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 15:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://tonyh.dev/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title> Four Node Bare Metal Kubernetes Raspberry Pi Cluster for about $450</title>
+      <link>https://tonyh.dev/posts/four-node-bare-metal-kubernetes-raspberry-pi-cluster-with-nfs-local-storage-for-under-550/</link>
+      <pubDate>Fri, 28 Feb 2020 15:00:00 +0000</pubDate>
+      
+      <guid>https://tonyh.dev/posts/four-node-bare-metal-kubernetes-raspberry-pi-cluster-with-nfs-local-storage-for-under-550/</guid>
+      <description>I have been thinking of making a homelab for years, but living in a 700 sqft condo I don&amp;rsquo;t have the room for the basement rack of my dreams. A few months ago with the launch of the Raspberry Pi Model 4 B with 4GB of ram I started looking into building a cluster of them for tooling around at home. I found the Pi Dramble which give me the push to build it out for testing Kubernetes and eventually ESXi on ARM.</description>
+    </item>
     
     <item>
       <title>Easy Maintenance Mode vMotion Migration of vGPU Backed VMs</title>
